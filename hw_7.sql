@@ -10,15 +10,15 @@ mysql> SHOW GRANTS;
 -- SHOW GRANTS FOR CURRENT_USER();
 mysql> show grants for 'dev1'@'localhost';
 
-mysqldump -u root -p geodata > d:\src\geodata_l7.sql
+mysqldump -u root -p geodata > ~/geodata.sql
 mysql> drop database geodata;
 mysql> show database;
 mysql> create database geodata;
 mysql> SELECT table_name, table_schema FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE';
 
 mysqldump --no-tablespaces -u dev1 -p geodata > ~/geodata.sql
-tail -n 13 geodata_dev1.sql
+tail -n 13 geodata.sql
 -- не срабатывает пишет нет такой БД mysql -u dev1 -p geodata < ~/geodata.sql
-mysql> source ~/geodata_dev1.sql
+mysql> source ~/geodata.sql
 
 --
